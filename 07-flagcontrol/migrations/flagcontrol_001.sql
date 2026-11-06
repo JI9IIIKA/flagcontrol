@@ -1,0 +1,2 @@
+CREATE TABLE flags(tenant text NOT NULL,key text NOT NULL,environment text NOT NULL,version integer NOT NULL,enabled boolean NOT NULL,percentage integer NOT NULL CHECK(percentage BETWEEN 0 AND 100),allow_users text[] NOT NULL DEFAULT '{}',created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(tenant,key,environment,version));
+CREATE TABLE flag_heads(tenant text NOT NULL,key text NOT NULL,environment text NOT NULL,version integer NOT NULL,PRIMARY KEY(tenant,key,environment),FOREIGN KEY(tenant,key,environment,version) REFERENCES flags(tenant,key,environment,version));

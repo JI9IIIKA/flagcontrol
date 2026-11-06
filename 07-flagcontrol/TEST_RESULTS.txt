@@ -1,0 +1,6 @@
+Standalone module: build PASS; vet PASS; unit tests PASS.
+API/SQL on PGlite, single connection:
+=== RUN   TestFlagControl
+--- PASS: TestFlagControl (0.03s)
+PASS
+ok  	flagcontrol/tests	0.039s

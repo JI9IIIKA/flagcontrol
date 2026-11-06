@@ -1,0 +1,7 @@
+syntax = "proto3";
+package portfolio.flags;
+import "google/protobuf/struct.proto";
+// Request: {key: string, environment: string}.
+// Response: tenant, key, environment, version, enabled, percentage, allow_users.
+// Authorization metadata: Bearer <API token>.
+service Config { rpc Get(google.protobuf.Struct) returns (google.protobuf.Struct); }
